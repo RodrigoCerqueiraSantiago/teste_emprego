@@ -73,22 +73,8 @@ class DividaController{
 
     }
 
-    /*static function getDividasDevedor($params){
-
-       
-        
-        $dividas = Dividas::getDividaById_Devedor($id_devedor);
-       
-        
-        exit;
-
-    }*/
-
     static public function store(){
-        //validar aqui campos vazios
-      //  var_dump($_POST);exit;   
-
- 
+      
         try {
             Devedores::addDividaDevedor($_POST);
             echo '<script>alert("Devedor cadastrado com sucesso!");</script>';

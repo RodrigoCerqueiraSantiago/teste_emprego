@@ -45,15 +45,6 @@ class DividaController{
 
     public function update($params){
         
-       
-        /**
-         *   'fk_devedor' => string '1' (length=1)
-         * 'id_divida' => string '1' (length=1)
-         * 'descricao_titulo' => string 'Empréstimo' (length=11)
-         * 'data_vencimento' => string '2021-10-06' (length=10)
-         *  'valor' => string '10,89' (length=5)
-         */
-
         $con = Connection::getConn();  
         
         $sql="UPDATE devedores SET fk_devedor = :fk_devedor, id_divida = :id_divida, 

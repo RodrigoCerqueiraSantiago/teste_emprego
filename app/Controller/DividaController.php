@@ -53,9 +53,6 @@ class DividaController{
         $sql->bindValue(':valor', $params['valor']);
         $result = $sql->execute();
 
-     
-        
-
         if($result==0){
             throw new Exception("Falha ao alterar Devedor");
             return false;       

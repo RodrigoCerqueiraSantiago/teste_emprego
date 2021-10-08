@@ -10,22 +10,18 @@ class DividaController{
         $loader = new \Twig\Loader\FilesystemLoader('app/View');
         $twig = new \Twig\Environment($loader);
         //________________________________________________
-        //$template = $twig->load('dividas.php');
+      
         $template = $twig->load('detalhes_divida.php');
         $parametros['nome_pg']=($DividasDevedor ? 'Detalhes Dívidas' :'Dívidas');
         
         if(isset($params)){
             try {
-                $DividasDevedor = DIVIDAS::getDividaById_Devedor($params);                
-                
+                $DividasDevedor = DIVIDAS::getDividaById_Devedor($params);   
                 $parametros['nome_pg']='Detalhes Dívidas ';
                 $parametros['divida'] = array_filter($DividasDevedor);
-
                 $conteudo = $template->render($parametros);            
-                //$contudo tem código html pra renderizar
+         
                 echo $conteudo;  
-
-               // var_dump($DividasDevedor);exit;
             } catch (\Throwable $th) {
                 //throw $th;
             }
@@ -35,12 +31,8 @@ class DividaController{
              */
             $loader = new \Twig\Loader\FilesystemLoader('app/View');
             $twig = new \Twig\Environment($loader);
-            //________________________________________________
-            //$template = $twig->load('dividas.php');
             $template = $twig->load('add_devedor.php');
         }
-
-        
     }
 
     public function update($params){
